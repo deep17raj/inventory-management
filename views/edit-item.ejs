@@ -1,0 +1,25 @@
+<%- include('partials/header') %>
+<div class="container mt-5">
+    <h2>Edit Item</h2>
+    <form action="/items/<%= item.id %>" method="POST">
+        <div class="mb-3">
+            <label class="form-label">Name</label>
+            <input type="text" name="name" value="<%= item.name %>" class="form-control" required>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Description</label>
+            <textarea name="description" class="form-control"><%= item.description %></textarea>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Quantity</label>
+            <input type="number" name="quantity" value="<%= item.quantity %>" class="form-control" required>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Price</label>
+            <input type="number" step="0.01" name="price" value="<%= item.price %>" class="form-control" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Update Item</button>
+        <a href="/dashboard" class="btn btn-secondary">Cancel</a>
+    </form>
+</div>
+<%- include('partials/footer') %>

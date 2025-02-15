@@ -1,0 +1,18 @@
+<%- include('partials/header') %>
+<div class="container mt-5">
+    <h2>Item Details</h2>
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title"><%= item.name %></h5>
+            <p class="card-text"><strong>Description:</strong> <%= item.description %></p>
+            <p class="card-text"><strong>Quantity:</strong> <%= item.quantity %></p>
+            <p class="card-text"><strong>Price:</strong> $<%= item.price %></p>
+            <a href="/items/<%= item.id %>/edit" class="btn btn-warning">Edit</a>
+            <a href="/items/dashboard" class="btn btn-secondary">Back to Dashboard</a>
+            <form action="/items/<%= item.id %>/delete" method="POST" class="d-inline">
+                <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure?')">Delete</button>
+            </form>
+        </div>
+    </div>
+</div>
+<%- include('partials/footer') %>
